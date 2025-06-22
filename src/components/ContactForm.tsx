@@ -5,9 +5,7 @@ import { motion } from 'framer-motion';
 import { 
   initEmailJS, 
   EMAILJS_SERVICE_ID, 
-  EMAILJS_TEMPLATE_ID, 
-  EMAILJS_PUBLIC_KEY,
-  RECIPIENT_EMAIL
+  EMAILJS_TEMPLATE_ID,
 } from '@/utils/emailjs';
 
 const ContactForm = () => {
@@ -39,14 +37,34 @@ const ContactForm = () => {
     setLoading(true);
 
     try {
+      // Prepare template parameters to match the EmailJS template
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        time: new Date().toLocaleString('en-US', {
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: true,
+        }),
+      };
+
+      console.log('Sending email with:', {
+        serviceId: EMAILJS_SERVICE_ID,
+        templateId: EMAILJS_TEMPLATE_ID,
+        templateParams
+      });
+      
       // Send email using EmailJS
-      await emailjs.sendForm(
+      const result = await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        formRef.current!, 
-        EMAILJS_PUBLIC_KEY
+        templateParams
+        // Public key is not needed here if initialized globally
       );
 
+      console.log('Email sent successfully:', result);
+      
       setStatus({
         submitted: true,
         success: true,
@@ -57,10 +75,16 @@ const ContactForm = () => {
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
       console.error('Email sending failed:', error);
+      // More detailed error message
+      let errorMessage = 'Oops! Something went wrong. Please try again later.';
+      if (error instanceof Error) {
+        errorMessage = `Error: ${error.message}`;
+      }
+      
       setStatus({
         submitted: true,
         success: false,
-        message: 'Oops! Something went wrong. Please try again later.'
+        message: errorMessage
       });
     } finally {
       setLoading(false);
@@ -126,8 +150,6 @@ const ContactForm = () => {
             />
             <label htmlFor="message">Message</label>
           </div>
-
-          <input type="hidden" name="to_email" value={RECIPIENT_EMAIL} />
 
           <motion.button
             type="submit"
