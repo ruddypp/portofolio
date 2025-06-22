@@ -4,7 +4,7 @@ import React, { useState, useRef } from 'react';
 import Section from './Section';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiMongodb, SiTypescript, SiFirebase, SiPostgresql, SiPrisma, SiKotlin, SiSqlite, SiPhp, SiBootstrap } from 'react-icons/si';
+import { SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiMongodb, SiTypescript, SiFirebase, SiPostgresql, SiPrisma, SiKotlin, SiSqlite, SiPhp, SiBootstrap, SiMysql} from 'react-icons/si';
 import Image from 'next/image';
 
 const ProjectSection = () => {
@@ -59,21 +59,23 @@ const ProjectSection = () => {
       techStack: [
         { icon: <SiPhp className="text-[#612a81]" />, name: 'PHP' },
         { icon: <SiBootstrap className="text-[#612a81]" />, name: 'Bootstrap' },
+        { icon: <SiMysql className="text-[#4606f7]" />, name: 'MySQL' },
       ],
       github: 'https://github.com/ruddypp/e-learning',
       demo: 'https://tplp8.my.id/elearning/'
     },
     {
       id: 'project4',
-      title: 'Weather Dashboard',
-      description: 'Real-time weather dashboard with forecast data and customizable views for different locations. Features include location search, daily and hourly forecasts, and weather alerts.',
+      title: 'Didi Kalibrasi Employee Management and Payroll System',
+      description: 'Didi Kalibrasi Employee Management and Payroll System is a web-based application designed to manage employee data, attendance, and payroll. This application is implemented at PT Didi Kalibrasi',
       status: 'completed',
-      image: '/images/projects/project4.jpg',
+      image: '/images/projects/4.jpg',
       techStack: [
-        { icon: <SiReact className="text-[#61DAFB]" />, name: 'React' },
-        { icon: <SiTailwindcss className="text-[#06B6D4]" />, name: 'Tailwind CSS' }
+        { icon: <SiPhp className="text-[#612a81]" />, name: 'PHP' },
+        { icon: <SiBootstrap className="text-[#612a81]" />, name: 'Bootstrap' },
+        { icon: <SiMysql className="text-[#4606f7]" />, name: 'MySQL' },
       ],
-      github: 'https://github.com/rudypaningal/weather-app',
+      github: 'https://github.com/ruddypp/didi-kalibrasi',
       demo: 'https://didikalibrasi.com/abdika/login.php'
     },
     {
