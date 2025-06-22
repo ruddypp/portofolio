@@ -51,8 +51,8 @@ const Navbar = () => {
         scrolled ? 'bg-[rgba(13,13,13,0.8)] backdrop-blur-md' : 'bg-transparent'
       }`}>
         <div className="container mx-auto flex justify-between items-center">
-          <Link href="#home" className="text-lg sm:text-xl font-bold z-50">
-            <span className="gradient-text text-white">Rudy Paningal</span>
+          <Link href="#home" className="text-lg sm:text-xl font-bold z-50 hover:text-primary transition-colors">
+            <span className="text-white">Rudy Paningal</span>
           </Link>
 
           {/* Desktop Navigation */}

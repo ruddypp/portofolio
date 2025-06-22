@@ -4,7 +4,7 @@ import React, { useState, useRef } from 'react';
 import Section from './Section';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiMongodb, SiTypescript, SiExpress, SiFirebase } from 'react-icons/si';
+import { SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiMongodb, SiTypescript, SiFirebase, SiPostgresql, SiPrisma, SiKotlin, SiSqlite, SiPhp, SiBootstrap } from 'react-icons/si';
 import Image from 'next/image';
 
 const ProjectSection = () => {
@@ -25,47 +25,43 @@ const ProjectSection = () => {
     {
       id: 'project1',
       title: 'Paramata Inventory System',
-      description: 'A full-featured e-commerce platform with user authentication, product catalog, and payment integration. Features include product search, filtering, cart management, and secure checkout process.',
+      description: 'Paramata is a comprehensive inventory management application built using Next.js and initialized with create-next-app. The application is designed to manage equipment inventory, calibration, maintenance, and rentals with an integrated notification system.',
       status: 'completed',
       image: '/images/projects/1.png',
       techStack: [
-        { icon: <SiReact className="text-[#61DAFB]" />, name: 'React' },
         { icon: <SiNextdotjs className="text-white" />, name: 'Next.js' },
-        { icon: <SiNodedotjs className="text-[#68A063]" />, name: 'Node.js' },
-        { icon: <SiMongodb className="text-[#4DB33D]" />, name: 'MongoDB' }
+        { icon: <SiPostgresql className="text-[#1660ff]" />, name: 'Postgresql'},
+        { icon: <SiPrisma className="text-white" />, name: 'Prisma' },
+        { icon: <SiTailwindcss className="text-[#06B6D4]" />, name: 'Tailwind CSS' },
+        { icon: <SiTypescript className="text-[#3178C6]" />, name: 'TypeScript' }
       ],
       github: 'https://github.com/ruddypp/Kerja-PraktikV2',
       demo: 'https://www.paramata-baraya.site/login'
     },
     {
       id: 'project2',
-      title: 'Portfolio Website',
-      description: 'Personal portfolio website with modern UI and animations to showcase projects and skills. Features include interactive 3D elements, smooth scrolling, and responsive design.',
-      status: 'ongoing',
-      image: '/images/projects/project2.jpg',
+      title: 'Hospital Queue System Application',
+      description: 'Hospital Queue System Application is an Android application designed to facilitate patient queue management in hospitals. This application allows patients to register independently and get a queue number, while hospital staff can manage and call patients in order.',
+      status: 'completed',
+      image: '/images/projects/2.png',
       techStack: [
-        { icon: <SiReact className="text-[#61DAFB]" />, name: 'React' },
-        { icon: <SiNextdotjs className="text-white" />, name: 'Next.js' },
-        { icon: <SiTailwindcss className="text-[#06B6D4]" />, name: 'Tailwind CSS' },
-        { icon: <SiTypescript className="text-[#3178C6]" />, name: 'TypeScript' }
+        { icon: <SiKotlin className="text-[#704767]" />, name: 'Kotlin' },
+        { icon: <SiSqlite className="text-blue-500" />, name: 'SQLite' },
       ],
-      github: 'https://github.com/rudypaningal/portfolio',
+      github: 'https://github.com/ruddypp/rs-citra-medika',
       demo: ''
     },
     {
       id: 'project3',
-      title: 'Task Management App',
-      description: 'A productivity application for task management with drag-and-drop interface and collaboration features. Includes task categorization, priority levels, due dates, and team assignment capabilities.',
-      status: 'completed',
-      image: '/images/projects/project3.jpg',
+      title: 'Portaldik',
+      description: 'Portaldik is a web-based e-learning application designed to facilitate materials, quizzes, and questionnaires as feedback from performance and questions given. There are four types of users: Admin, Teacher, Student, and Principal. This application is implemented at SDN 05 Bintaro',
+      image: '/images/projects/3.png',
       techStack: [
-        { icon: <SiReact className="text-[#61DAFB]" />, name: 'React' },
-        { icon: <SiNextdotjs className="text-white" />, name: 'Next.js' },
-        { icon: <SiTailwindcss className="text-[#06B6D4]" />, name: 'Tailwind CSS' },
-        { icon: <SiNodedotjs className="text-[#68A063]" />, name: 'Node.js' }
+        { icon: <SiPhp className="text-[#612a81]" />, name: 'PHP' },
+        { icon: <SiBootstrap className="text-[#612a81]" />, name: 'Bootstrap' },
       ],
-      github: 'https://github.com/rudypaningal/task-app',
-      demo: 'https://example.com'
+      github: 'https://github.com/ruddypp/e-learning',
+      demo: 'https://tplp8.my.id/elearning/'
     },
     {
       id: 'project4',
@@ -78,7 +74,7 @@ const ProjectSection = () => {
         { icon: <SiTailwindcss className="text-[#06B6D4]" />, name: 'Tailwind CSS' }
       ],
       github: 'https://github.com/rudypaningal/weather-app',
-      demo: 'https://example.com'
+      demo: 'https://didikalibrasi.com/abdika/login.php'
     },
     {
       id: 'project5',
@@ -118,7 +114,6 @@ const ProjectSection = () => {
         { icon: <SiReact className="text-[#61DAFB]" />, name: 'React' },
         { icon: <SiTypescript className="text-[#3178C6]" />, name: 'TypeScript' },
         { icon: <SiNodedotjs className="text-[#68A063]" />, name: 'Node.js' },
-        { icon: <SiMongodb className="text-[#4DB33D]" />, name: 'MongoDB' }
       ],
       github: 'https://github.com/rudypaningal/finance-app',
       demo: ''
