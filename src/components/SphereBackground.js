@@ -11,7 +11,7 @@ const WireframeSphere = () => {
   const [hovered, setHovered] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   
-  useFrame((state) => {
+  useFrame(() => {
     if (sphereRef.current && !isDragging) {
       // Only auto-rotate when not being dragged
       const speed = hovered ? 0.15 : 0.08;
@@ -142,7 +142,7 @@ const SphereBackground = () => {
   }, []);
 
   return (
-    <div className="w-full h-full draggable-canvas">
+    <div className="w-full h-full draggable-canvas pointer-events-auto">
       <Canvas
         camera={{ position: [0, 0, 10], fov: 45 }}
         style={{ background: 'transparent' }}

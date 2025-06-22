@@ -55,14 +55,14 @@ const SkillsSection = () => {
       >
         {skills.map((skill, index) => (
           <motion.div key={index} variants={item} className="flex justify-center">
-            <motion.div 
+              <motion.div 
               className="relative w-24 h-24 flex items-center justify-center rounded-full backdrop-blur-sm bg-black/10 hover:bg-black/20 transition-all duration-300"
               whileHover={{ 
                 scale: 1.15,
                 boxShadow: '0 0 25px rgba(59, 130, 246, 0.3)'
               }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
               {/* Glass effect */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/5 to-transparent"></div>
               <div className="absolute inset-0 rounded-full border border-white/10"></div>
@@ -74,7 +74,7 @@ const SkillsSection = () => {
               <div className="relative z-10">
                 {skill.icon}
               </div>
-            </motion.div>
+              </motion.div>
           </motion.div>
         ))}
       </motion.div>

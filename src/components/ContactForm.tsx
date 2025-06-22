@@ -1,7 +1,14 @@
-import { useState, useRef, FormEvent } from 'react';
+import { useState, useRef, FormEvent, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import GlassCard from './GlassCard';
 import { motion } from 'framer-motion';
+import { 
+  initEmailJS, 
+  EMAILJS_SERVICE_ID, 
+  EMAILJS_TEMPLATE_ID, 
+  EMAILJS_PUBLIC_KEY,
+  RECIPIENT_EMAIL
+} from '@/utils/emailjs';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -17,6 +24,11 @@ const ContactForm = () => {
   const [loading, setLoading] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
 
+  // Initialize EmailJS on component mount
+  useEffect(() => {
+    initEmailJS();
+  }, []);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
@@ -27,16 +39,13 @@ const ContactForm = () => {
     setLoading(true);
 
     try {
-      // Replace these values with your actual EmailJS credentials
+      // Send email using EmailJS
       await emailjs.sendForm(
-        'YOUR_SERVICE_ID', 
-        'YOUR_TEMPLATE_ID',
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
         formRef.current!, 
-        'YOUR_PUBLIC_KEY'
+        EMAILJS_PUBLIC_KEY
       );
-
-      // You'll need to set up EmailJS account and create a template
-      // that forwards messages to paningalrudy@gmail.com
 
       setStatus({
         submitted: true,
@@ -47,6 +56,7 @@ const ContactForm = () => {
       // Reset form
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
+      console.error('Email sending failed:', error);
       setStatus({
         submitted: true,
         success: false,
@@ -116,6 +126,8 @@ const ContactForm = () => {
             />
             <label htmlFor="message">Message</label>
           </div>
+
+          <input type="hidden" name="to_email" value={RECIPIENT_EMAIL} />
 
           <motion.button
             type="submit"

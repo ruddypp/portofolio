@@ -9,7 +9,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'education', 'skills', 'projects', 'contact'];
+      const sections = ['home', 'introduction', 'education', 'skills', 'projects', 'contact'];
       
       // Check which section is in view
       for (const section of sections) {
@@ -33,6 +33,7 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Home', href: '#home' },
+    { name: 'Introduction', href: '#introduction' },
     { name: 'Education', href: '#education' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
@@ -46,16 +47,16 @@ const Navbar = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <nav className={`py-4 px-6 transition-all duration-300 ${
-        scrolled ? 'glass-card !bg-[rgba(13,13,13,0.8)]' : 'bg-transparent'
+      <nav className={`py-3 px-4 sm:py-4 sm:px-6 transition-all duration-300 ${
+        scrolled ? 'bg-[rgba(13,13,13,0.8)] backdrop-blur-md' : 'bg-transparent'
       }`}>
         <div className="container mx-auto flex justify-between items-center">
-          <Link href="#home" className="text-xl font-bold">
-            <span className="gradient-text">Rudy Paningal</span>
+          <Link href="#home" className="text-lg sm:text-xl font-bold z-50">
+            <span className="gradient-text text-white">Rudy Paningal</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <ul className="md:flex space-x-8 flex justify-center items-center">
+          <ul className="hidden md:flex space-x-6 lg:space-x-8 justify-center items-center">
             {navItems.map((item) => (
               <li key={item.name}>
                 <Link 
@@ -72,7 +73,7 @@ const Navbar = () => {
 
           {/* Mobile Navigation Button */}
           <button 
-            className="md:hidden relative z-20 w-8 h-8 flex flex-col justify-center items-center"
+            className="md:hidden relative z-50 w-8 h-8 flex flex-col justify-center items-center"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -95,7 +96,7 @@ const Navbar = () => {
 
           {/* Mobile Navigation Menu */}
           <motion.div 
-            className={`fixed top-0 right-0 h-screen w-full md:hidden glass-card backdrop-blur-lg !bg-[rgba(13,13,13,0.9)]`}
+            className={`fixed top-0 right-0 h-screen w-full md:hidden bg-[rgba(13,13,13,0.95)] backdrop-blur-lg`}
             initial={{ x: '100%' }}
             animate={{ x: isOpen ? '0%' : '100%' }}
             transition={{ duration: 0.3 }}

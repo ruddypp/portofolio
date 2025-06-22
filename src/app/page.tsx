@@ -23,10 +23,10 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative min-h-screen">
+    <main className="relative min-h-screen overflow-x-hidden">
       {/* Loading Screen */}
       {isLoading && (
-        <div className="fixed inset-0 bg-background z-50 flex items-center justify-center">
+        <div className="fixed inset-0 bg-background z-[100] flex items-center justify-center">
           <div className="relative w-20 h-20">
             <div className="absolute inset-0 rounded-full border-4 border-primary/20 animate-pulse"></div>
             <div className="absolute top-0 bottom-0 left-0 right-0 border-t-4 border-primary rounded-full animate-spin"></div>
@@ -38,7 +38,7 @@ export default function Home() {
       <ParticleBackground />
 
       {/* Content */}
-      <div className={`transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+      <div className={`transition-opacity duration-500 relative z-10 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
         <Navbar />
         <HeroSection />
         <IntroductionSection />
@@ -48,7 +48,7 @@ export default function Home() {
         <ContactSection />
         
         {/* Footer */}
-        <footer className="py-8 text-center text-gray-400 text-sm">
+        <footer className="py-8 text-center text-gray-400 text-sm relative z-10">
           <div className="container mx-auto">
             <p>© {new Date().getFullYear()} Rudy Paningal. All rights reserved.</p>
           </div>

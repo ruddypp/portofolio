@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Section from './Section';
@@ -10,8 +9,6 @@ import {
 } from 'react-icons/si';
 
 const Projects = () => {
-  const [activeProject, setActiveProject] = useState<number | null>(null);
-
   const projects = [
     {
       title: "E-Commerce Website",
@@ -114,8 +111,6 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
-            onHoverStart={() => setActiveProject(index)}
-            onHoverEnd={() => setActiveProject(null)}
           >
             <GlassCard 
               className="h-full flex flex-col overflow-hidden relative group"

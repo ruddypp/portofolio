@@ -57,7 +57,7 @@ const IntroductionSection = () => {
 
   return (
     <Section id="introduction" title="Introduction" subtitle="Get to know me better">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-8 md:mt-12 px-4 sm:px-0">
         {/* Photo Card - Left Side */}
         <motion.div 
           className="md:col-span-1"
@@ -66,15 +66,15 @@ const IntroductionSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <GlassCard className="h-full flex flex-col items-center justify-center p-6">
-            <div className="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-primary/30 mb-6 bg-black/30">
+          <GlassCard className="h-full flex flex-col items-center justify-center p-4 sm:p-6">
+            <div className="relative w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border-4 border-primary/30 mb-4 sm:mb-6 bg-black/30">
               {imageError ? (
                 <div className="w-full h-full flex items-center justify-center bg-black/40">
-                  <FaUser className="text-6xl text-primary/70" />
+                  <FaUser className="text-5xl sm:text-6xl text-primary/70" />
                 </div>
               ) : (
                 <Image 
-                  src="/images/profile-photo.jpg" 
+                  src="/images/rudy.jpg" 
                   alt="Rudy Paningal" 
                   fill
                   className="object-cover"
@@ -83,25 +83,17 @@ const IntroductionSection = () => {
                 />
               )}
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2">Rudy Paningal</h3>
-            <p className="text-gray-300 text-center">Fullstack Web Developer based in Indonesia, passionate about creating modern web applications.</p>
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2">Rudy Paningal</h3>
+            <p className="text-gray-300 text-center text-sm sm:text-base">Fullstack Web Developer based in Indonesia, passionate about creating modern web applications.</p>
             
-            <div className="mt-6 grid grid-cols-2 gap-4 w-full">
+            <div className="mt-4 sm:mt-6 grid grid-cols-2 gap-3 sm:gap-4 w-full">
               <div className="text-center">
-                <p className="text-gray-400 text-sm">Age</p>
-                <p className="text-white font-medium">22</p>
+                <p className="text-gray-400 text-xs sm:text-sm">Experience</p>
+                <p className="text-white font-medium text-sm sm:text-base">1Years</p>
               </div>
               <div className="text-center">
-                <p className="text-gray-400 text-sm">Experience</p>
-                <p className="text-white font-medium">3 Years</p>
-              </div>
-              <div className="text-center">
-                <p className="text-gray-400 text-sm">Location</p>
-                <p className="text-white font-medium">Indonesia</p>
-              </div>
-              <div className="text-center">
-                <p className="text-gray-400 text-sm">Availability</p>
-                <p className="text-white font-medium">Available</p>
+                <p className="text-gray-400 text-xs sm:text-sm">Location</p>
+                <p className="text-white font-medium text-sm sm:text-base">Indonesia</p>
               </div>
             </div>
           </GlassCard>
@@ -115,21 +107,21 @@ const IntroductionSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <GlassCard className="h-full p-6">
-            <h3 className="text-2xl font-bold text-white mb-4">About Me</h3>
-            <p className="text-gray-300 mb-6">
-              Hello! I'm Rudy Paningal, a passionate Fullstack Web Developer with expertise in modern web technologies. 
+          <GlassCard className="h-full p-4 sm:p-6">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">About Me</h3>
+            <p className="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">
+              Hello! I&apos;m Rudy Paningal, a passionate Fullstack Web Developer with expertise in modern web technologies. 
               I specialize in creating responsive, user-friendly web applications that provide exceptional user experiences.
             </p>
-            <p className="text-gray-300 mb-6">
+            <p className="text-gray-300 mb-4 sm:mb-6 text-sm sm:text-base">
               With a strong foundation in both frontend and backend development, I enjoy tackling complex problems and turning ideas into 
               functional, elegant solutions. My approach combines technical expertise with creativity to build applications that not only work 
               flawlessly but also look great.
             </p>
             
-            <h3 className="text-2xl font-bold text-white mb-4">My Focus Areas</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">My Focus Areas</h3>
             <motion.div 
-              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
@@ -138,14 +130,14 @@ const IntroductionSection = () => {
               {focusAreas.map((area, index) => (
                 <motion.div 
                   key={index} 
-                  className="bg-black/20 backdrop-blur-sm rounded-lg p-4 border border-primary/10"
+                  className="bg-black/20 backdrop-blur-sm rounded-lg p-3 sm:p-4 border border-primary/10"
                   variants={itemVariants}
                 >
-                  <div className="flex items-center mb-3">
+                  <div className="flex items-center mb-2 sm:mb-3">
                     {area.icon}
-                    <h4 className="text-lg font-semibold text-white ml-3">{area.title}</h4>
+                    <h4 className="text-base sm:text-lg font-semibold text-white ml-3">{area.title}</h4>
                   </div>
-                  <p className="text-gray-300 text-sm">{area.description}</p>
+                  <p className="text-gray-300 text-xs sm:text-sm">{area.description}</p>
                 </motion.div>
               ))}
             </motion.div>

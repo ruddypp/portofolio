@@ -14,7 +14,7 @@ const ContactSection = () => {
           className="text-center mb-12"
         >
           <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            Have a project in mind or want to collaborate? Feel free to reach out and let's create something amazing together!
+            Have a project in mind or want to collaborate? Feel free to reach out and let&apos;s create something amazing together!
           </p>
         </motion.div>
 

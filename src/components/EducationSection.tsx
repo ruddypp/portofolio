@@ -7,23 +7,35 @@ const EducationSection = () => {
   const education = [
     {
       level: 'Junior High School',
-      school: 'SMP Negeri 1 Jakarta',
-      year: '2010 - 2013',
-      description: 'Completed junior high school education with focus on fundamental subjects.',
+      school: 'SMP Negeri 24 Tangerang',
+      year: '2016 - 2018',
+      description: 'Completed junior high school education',
     },
     {
       level: 'Senior High School',
-      school: 'SMA Negeri 1 Jakarta',
-      year: '2013 - 2016',
-      description: 'Graduated from senior high school with science specialization.',
+      school: 'SMK Budi Mulia',
+      year: '2018 - 2021',
+      description: 'Graduated from senior high school with graphics design specialization.',
     },
     {
       level: 'University',
       school: 'Universitas Pamulang',
       major: 'Teknik Informatika',
-      year: '2016 - 2020',
+      year: '2022 - now',
       description: 'Studied Computer Science with focus on programming, algorithms, and software development.',
     },
+  ];
+
+  // Create individual refs for each education item
+  const [ref0, inView0] = useInView({ triggerOnce: true, threshold: 0.2 });
+  const [ref1, inView1] = useInView({ triggerOnce: true, threshold: 0.2 });
+  const [ref2, inView2] = useInView({ triggerOnce: true, threshold: 0.2 });
+  
+  // Array of refs and inView values for easier access
+  const refData = [
+    { ref: ref0, inView: inView0 },
+    { ref: ref1, inView: inView1 },
+    { ref: ref2, inView: inView2 }
   ];
 
   return (
@@ -40,10 +52,7 @@ const EducationSection = () => {
           {/* Timeline items */}
           <div className="space-y-12">
             {education.map((item, index) => {
-              const [ref, inView] = useInView({
-                triggerOnce: true,
-                threshold: 0.2,
-              });
+              const { ref, inView } = refData[index];
               
               return (
                 <motion.div
