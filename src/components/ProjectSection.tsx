@@ -4,7 +4,7 @@ import React, { useState, useRef } from 'react';
 import Section from './Section';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiMongodb, SiTypescript, SiFirebase, SiPostgresql, SiPrisma, SiKotlin, SiSqlite, SiPhp, SiBootstrap, SiMysql} from 'react-icons/si';
+import { SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiTypescript, SiPostgresql, SiPrisma, SiKotlin, SiSqlite, SiPhp, SiBootstrap, SiMysql, SiExpress} from 'react-icons/si';
 import Image from 'next/image';
 
 const ProjectSection = () => {
@@ -94,32 +94,18 @@ const ProjectSection = () => {
     },
     {
       id: 'project6',
-      title: 'Chat Application',
-      description: 'Real-time chat application with private messaging, group chats and file sharing capabilities. Features include read receipts, typing indicators, and push notifications.',
-      status: 'ongoing',
-      image: '/images/projects/project6.jpg',
+      title: 'Xsignature BookingApp',
+      description: 'Xsignature BookingApp is a web-based application designed to manage bookings, customers, and payments. This application is built using React, Tailwind CSS, and Express.js.',
+      status: 'completed',
+      image: '/images/projects/6.png',
       techStack: [
         { icon: <SiReact className="text-[#61DAFB]" />, name: 'React' },
-        { icon: <SiFirebase className="text-[#FFCA28]" />, name: 'Firebase' },
+        { icon: <SiExpress className="text-[#FFCA28]" />, name: 'Express.js' },
         { icon: <SiTailwindcss className="text-[#06B6D4]" />, name: 'Tailwind CSS' }
       ],
-      github: 'https://github.com/rudypaningal/chat-app',
-      demo: ''
+      github: 'https://github.com/ruddypp/xsignatureee',
+      demo: 'https://xsignature.net/bookingapp/'
     },
-    {
-      id: 'project7',
-      title: 'Financial Dashboard',
-      description: 'Interactive financial dashboard with expense tracking, budgeting tools and data visualization. Includes income/expense categorization, budget planning, and financial goal tracking.',
-      status: 'ongoing',
-      image: '/images/projects/project7.jpg',
-      techStack: [
-        { icon: <SiReact className="text-[#61DAFB]" />, name: 'React' },
-        { icon: <SiTypescript className="text-[#3178C6]" />, name: 'TypeScript' },
-        { icon: <SiNodedotjs className="text-[#68A063]" />, name: 'Node.js' },
-      ],
-      github: 'https://github.com/rudypaningal/finance-app',
-      demo: ''
-    }
   ];
 
   // Calculate the number of projects to display at once based on screen size
