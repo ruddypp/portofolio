@@ -4,7 +4,7 @@ import React, { useState, useRef } from 'react';
 import Section from './Section';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { SiReact, SiNextdotjs, SiTailwindcss, SiNodedotjs, SiTypescript, SiPostgresql, SiPrisma, SiKotlin, SiSqlite, SiPhp, SiBootstrap, SiMysql, SiExpress} from 'react-icons/si';
+import { SiReact, SiNextdotjs, SiTailwindcss, SiTypescript, SiPostgresql, SiPrisma, SiKotlin, SiSqlite, SiPhp, SiBootstrap, SiMysql, SiExpress} from 'react-icons/si';
 import Image from 'next/image';
 
 const ProjectSection = () => {
