@@ -4,7 +4,7 @@ import React, { useState, useRef } from 'react';
 import Section from './Section';
 import { motion } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import { SiReact, SiNextdotjs, SiTailwindcss, SiTypescript, SiPostgresql, SiPrisma, SiKotlin, SiSqlite, SiPhp, SiBootstrap, SiMysql, SiExpress} from 'react-icons/si';
+import { SiReact, SiNextdotjs, SiTailwindcss, SiTypescript, SiPostgresql, SiPrisma, SiKotlin, SiSqlite, SiPhp, SiBootstrap, SiMysql, SiExpress, SiJquery} from 'react-icons/si';
 import Image from 'next/image';
 
 const ProjectSection = () => {
@@ -88,6 +88,7 @@ const ProjectSection = () => {
         { icon: <SiPhp className="text-[#612a81]" />, name: 'PHP' },
         { icon: <SiBootstrap className="text-[#612a81]" />, name: 'Bootstrap' },
         { icon: <SiMysql className="text-[#4606f7]" />, name: 'MySQL' },
+        { icon: <SiJquery className="text-[#4606f7]" />, name: 'jQuery' },
       ],
       github: 'https://github.com/ruddypp/bento-kopi',
       demo: 'tplp8.my.id/inventory/'
