@@ -80,17 +80,17 @@ const ProjectSection = () => {
     },
     {
       id: 'project5',
-      title: 'Blog Platform',
-      description: 'Content management system for blogs with markdown support, user authentication and commenting system. Includes rich text editing, image uploads, and social sharing capabilities.',
+      title: 'Bento Kopi Inventory System',
+      description: 'Bento Kopi Inventory System is a web-based application designed to manage stock, suppliers, receipts, expenses, stock opname, and returns. This application is built using native PHP, MySQL, and Tailwind CSS.',
       status: 'completed',
-      image: '/images/projects/project5.jpg',
+      image: '/images/projects/5.png', 
       techStack: [
-        { icon: <SiNextdotjs className="text-white" />, name: 'Next.js' },
-        { icon: <SiNodedotjs className="text-[#68A063]" />, name: 'Node.js' },
-        { icon: <SiMongodb className="text-[#4DB33D]" />, name: 'MongoDB' }
+        { icon: <SiPhp className="text-[#612a81]" />, name: 'PHP' },
+        { icon: <SiBootstrap className="text-[#612a81]" />, name: 'Bootstrap' },
+        { icon: <SiMysql className="text-[#4606f7]" />, name: 'MySQL' },
       ],
-      github: 'https://github.com/rudypaningal/blog-platform',
-      demo: 'https://example.com'
+      github: 'https://github.com/ruddypp/bento-kopi',
+      demo: 'tplp8.my.id/inventory/'
     },
     {
       id: 'project6',
