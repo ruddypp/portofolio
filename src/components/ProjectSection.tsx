@@ -69,7 +69,7 @@ const ProjectSection = () => {
       title: 'Didi Kalibrasi Employee Management and Payroll System',
       description: 'Didi Kalibrasi Employee Management and Payroll System is a web-based application designed to manage employee data, attendance, and payroll. This application is implemented at PT Didi Kalibrasi',
       status: 'completed',
-      image: '/images/projects/4.jpg',
+      image: '/images/projects/4.png',
       techStack: [
         { icon: <SiPhp className="text-[#612a81]" />, name: 'PHP' },
         { icon: <SiBootstrap className="text-[#612a81]" />, name: 'Bootstrap' },
